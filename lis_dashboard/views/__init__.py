@@ -1,0 +1,1 @@
+from lis_dashboard.views.sample_reception import ListBoardView as RequisitionListboardView

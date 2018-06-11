@@ -1,0 +1,36 @@
+{% extends "edc_dashboard/listboard.html" %}
+{% load admin_urls %}
+{% load edc_base_extras %}
+             
+{% block listboard_panel %}
+    <a id="subjectrequisition_add" title="add requisition" class="btn btn-sm btn-default" role="button" 
+        href="{{ subject_requisition_add_url }}?next={{ sample_reception_listboard_url }}">
+            <i class="fa fa-plus fa-sm"></i> Add Subject Requisition
+    </a>
+{% endblock listboard_panel %}
+
+
+{% block listboard_table_header %}
+    <!-- begin results header -->
+    <th>#</th>
+    <th></th>
+    <th>Requisition Identifier</th>
+    <th>Subject Identifier</th>
+    <th>Requisition Datetime</th>
+    <th>User</th>
+    <th>Modified</th>
+    <th>Host</th>
+    <!-- end results header -->
+{% endblock listboard_table_header %}
+
+
+{% block listboard_table_columns %}
+
+    <td>{{ result.requisition_identifier }} </td>
+    <td nowrap>{{ result.subject_identifier }}</td>
+    <td nowrap>{{ result.requisition_datetime }}</td>
+    <td nowrap>{{ result.user_created }}</td>
+    <td nowrap>{{ result.object.modified|date:"SHORT_DATETIME_FORMAT" }}</td>  
+    <td nowrap>{{ result.hostname_created }}</td>
+
+{% endblock listboard_table_columns %}

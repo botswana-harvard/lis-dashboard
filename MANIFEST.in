@@ -1,1 +1,4 @@
-recursive-include lis_dashboard/templates
+include AUTHORS CHANGES README.md LICENCE
+recursive-include lis_dashboard/templates *
+recursive-include lis_dashboard/static *
+recursive-exclude etc/*
